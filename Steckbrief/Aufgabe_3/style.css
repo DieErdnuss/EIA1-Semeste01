@@ -1,67 +1,71 @@
+/*HEADER*/
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 	background-image: url(medien/bg.png);
     
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
+
 }
 
-nav a:hover{
-    color: #be3c14;
-}
+/*NAVIGATION*/
 
-nav a:visited{
-    color: #be3c14;
-}
-
-nav {
-   
-    text-align: center;
-    color: black;
-    font-size: xx-large;
- 
-}
-
-.sticky{
+#navigation{
+    text-align: right;
+    z-index: ;
+    margin: -10px 0 0 1200px;
     position: sticky;
-    top: 0;
+    top: 0; 
+
+
+
+
 }
 
 a{
     text-decoration: none;
-    color: black;
 }
 
-li{
-    padding: 3px;
-    width: 800px;
-    display: inline-block;   
-    float: right; 
+a:hover{
+    color: #be3c14;
 }
 
-li a{
-    display: block;
+a:active{
+    color: #be3c14;
 }
 
-ul{
-    list-style-type: none;
-    text-align: top;
+
+nav {
+    text-align: center;
+    font-size: x-large;
+    background-color: black;
+    padding: 5px;
+    width: 300px; 
+    z-index: 3;   
 }
+
+nav a{
+    color: white;
+    
+}
+
+
 
 #loremipsum p{
     font-size: 50px;
     color: white;
-    z-index: 2;
-    text-align: right;
+    text-align: center;
+    margin: -200px 0 0 300px;
+
 }
 
 #kreis{
+    margin-left: auto;
+    margin-right: auto;
     background-color: #be3c14;
     width: 800px;
     height: 800px;
     border-radius: 400px;
-    z-index: 1;
+    
     margin-top: -550px;
     
  }
@@ -70,12 +74,18 @@ ul{
     color: white;
     font-size: 210px;
      text-align: center;
-     padding-top: 320px;
+     padding-top: 120px;
      letter-spacing: -20px;
      font-weight: 700;
      z-index: 2;
 
  }
+
+/*CONTENT*/
+
+main{
+    margin-top: 200px;
+}
 
 #bilder {
     display: block ;
@@ -83,6 +93,7 @@ ul{
     margin-right: auto;
     width: 800px;
     font-size: 20px;
+    color: #be3c14;
 
 }
 
@@ -91,6 +102,7 @@ ul{
     margin-left: auto;
     margin-right: auto;
     width: 800px;
+    
 }
 
 #animation video{
@@ -103,5 +115,6 @@ ul{
 
 #animation p{
     font-size: 20px;
+    color: #be3c14;
     
 }
