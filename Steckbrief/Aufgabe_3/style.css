@@ -10,15 +10,9 @@ body {
 /*NAVIGATION*/
 
 #navigation{
-    text-align: right;
-    z-index: ;
     margin: -10px 0 0 1200px;
     position: sticky;
     top: 0; 
-
-
-
-
 }
 
 a{
@@ -65,7 +59,6 @@ nav a{
     width: 800px;
     height: 800px;
     border-radius: 400px;
-    
     margin-top: -550px;
     
  }
@@ -77,7 +70,6 @@ nav a{
      padding-top: 120px;
      letter-spacing: -20px;
      font-weight: 700;
-     z-index: 2;
 
  }
 
@@ -117,4 +109,18 @@ main{
     font-size: 20px;
     color: #be3c14;
     
+}
+
+/*KONTAKTDATEN*/
+
+.daten{
+    box-sizing: content-box;
+    color: black;
+    background-color: rgb(200, 200, 200);
+    padding: 3px;
+    margin-left: 100px;
+}
+
+.daten p{
+    margin: 30px 0 30px 0;
 }
