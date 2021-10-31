@@ -46,9 +46,15 @@ li a{
 
 ul{
     list-style-type: none;
-    overflow: hidden;
+    text-align: top;
 }
 
+#loremipsum p{
+    font-size: 50px;
+    color: white;
+    z-index: 2;
+    text-align: right;
+}
 
 #kreis{
     background-color: #be3c14;
