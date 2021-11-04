@@ -64,7 +64,9 @@ a:hover{
 /*KREIS CONTENT*/
 
  #kreis p:nth-child(1){
-    color: white;
+    background-image: url(Medien/bg.png);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 700;
     letter-spacing: -16px;
     font-size: 12em;
@@ -74,6 +76,9 @@ a:hover{
 }
 
 #kreis p:nth-child(2){
+    background-image: url(Medien/bg.png);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 4em;
     color: white;
     font-weight: 600;
@@ -83,6 +88,9 @@ a:hover{
 }
 
 #kreis p:nth-child(3){
+    background-image: url(Medien/bg.png);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     position: absolute;
     left: 45%;
     top: 75%;
