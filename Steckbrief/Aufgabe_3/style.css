@@ -2,47 +2,104 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-	background-image: url(medien/bg.png);
-    
-
+	background-image: url(medien/bg.png);  
 }
 
 /*NAVIGATION*/
 
-#navigation{
-    margin: -10px 0 0 1200px;
-    position: sticky;
-    top: 0; 
+header{
+    height: 200px;
 }
 
-a{
+nav {
+    position: absolute;
+    top: 0%;
+    left: 60%;
+    margin-top: -6px;
+    border-radius: 5px;
+    top: 0;
+    display: inline;
+    padding: 20px 0 10px 0;
+    background-color: black;
+    width: ; 
+    z-index: 2;
+    
+}
+
+nav a{
+    font-size: large;
+    padding: 0px 15px 0px 15px;
+    color: white;
     text-decoration: none;
 }
 
+/*RESPONSE*/
+}
 a:hover{
     color: #be3c14;
 }
 
-a:active{
-    color: #be3c14;
+.activePage{
+    color:#be3c14 ;
 }
 
+/*KREIS*/
 
-nav {
-    text-align: center;
-    font-size: x-large;
-    background-color: black;
-    padding: 5px;
-    width: 300px; 
-    z-index: 3;   
-}
-
-nav a{
-    color: white;
+#kreis{
+    position: relative;
+    top: -550px;
+    width: 800px;
+    height: 800px;
+    margin: auto;
+    background-color:#be3c14 ;
+    border-radius: 400px;
     
 }
 
+/*KREIS CONTENT*/
 
+ #kreis p:nth-child(1){
+    color: white;
+    font-weight: 700;
+    letter-spacing: -16px;
+    font-size: 12em;
+    position: relative;
+    top: 46%;
+    text-align: center;
+}
+
+#kreis p:nth-child(2){
+    font-size: 4em;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    left: 45%;
+    top: 60%;
+}
+
+#kreis p:nth-child(3){
+    position: absolute;
+    left: 45%;
+    top: 75%;
+    font-size: 15px;
+    color: white;
+    text-align: left;
+}
+
+/*KREIS ICONS*/
+
+#kreis a :nth-child(1){
+    position: absolute;
+    left: 45%;
+    top: 90%;
+}
+
+#kreis #RKF_würfel{
+    height: 12%;
+    position: relative;
+    left:15%;
+    top: 33%;
+}
 
 #loremipsum p{
     font-size: 50px;
@@ -52,28 +109,9 @@ nav a{
 
 }
 
-#kreis{
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #be3c14;
-    width: 800px;
-    height: 800px;
-    border-radius: 400px;
-    margin-top: -550px;
-    
- }
 
- #kreis p{
-    color: white;
-    font-size: 210px;
-     text-align: center;
-     padding-top: 120px;
-     letter-spacing: -20px;
-     font-weight: 700;
 
- }
-
-/*CONTENT*/
+/*MAIN*/
 
 main{
     margin-top: 200px;
@@ -109,6 +147,25 @@ main{
     font-size: 20px;
     color: #be3c14;
     
+}
+
+.fließtext{
+    line-height: 40px;
+    font-size: 20px;
+    text-align: justify;
+    margin: auto;
+    width: 800px;
+}
+
+.fließtext p:nth-child(2){
+    text-align: center;
+    padding-top: 30px;
+}
+
+#leitsatz{
+    font-size: xx-large;
+    color: #973000;
+    text-align: center;
 }
 
 /*KONTAKTDATEN*/
