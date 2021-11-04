@@ -113,6 +113,8 @@ a:hover{
 
 /*MAIN*/
 
+/*MEDIEN*/
+
 main{
     margin-top: 200px;
 }
@@ -124,7 +126,10 @@ main{
     width: 800px;
     font-size: 20px;
     color: #be3c14;
+}
 
+#bilder img :nth-child(1){
+    
 }
 
 #animation{
@@ -149,6 +154,8 @@ main{
     
 }
 
+/*TEXT*/
+
 .fließtext{
     line-height: 40px;
     font-size: 20px;
@@ -168,6 +175,8 @@ main{
     text-align: center;
 }
 
+
+
 /*KONTAKTDATEN*/
 
 .daten{
@@ -180,4 +189,27 @@ main{
 
 .daten p{
     margin: 30px 0 30px 0;
+}
+
+/*FOOTER*/
+
+footer div{
+    margin-top: 100px;
+    height: 150px;
+    width: 100%;
+    background-color: grey;
+    display: inline-block;
+}
+
+#footer{
+    padding-top: 20px;
+    background-color: grey;
+    width: 800px;
+    margin: auto;
+}
+
+#footer p{
+    padding: 20px;
+    color: white;
+    display: inline;
 }
