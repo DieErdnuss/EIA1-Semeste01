@@ -2,24 +2,28 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-	background-image: url(medien/bg.png);  
-}
+	background-image: url(medien/bg.png); 
+    }
 
 /*NAVIGATION*/
 
 header{
     height: 200px;
+    position: relative;
+    left: 50%;
+    width: 1000px;
+    margin-left: -500px;
 }
 
-nav {
-    position: absolute;
+nav{
+    float: right;
+    position: sticky;
     top: 0%;
     left: 60%;
-    margin-top: -6px;
-    border-radius: 5px;
-    top: 0;
+    margin-top: -1300px;
+    border-radius: 0px;
     display: inline;
-    padding: 20px 0 10px 0;
+    padding: 5px 0 10px 0;
     background-color: black;
     width: ; 
     z-index: 2;
@@ -34,9 +38,10 @@ nav a{
 }
 
 /*RESPONSE*/
-}
+
 a:hover{
     color: #be3c14;
+    transition-duration: 0.4s;
 }
 
 .activePage{
@@ -116,7 +121,11 @@ a:hover{
 /*MEDIEN*/
 
 main{
+    position: relative;
+    left: 50%;
     margin-top: 200px;
+    width: 800px;
+    margin-left: -400px;
 }
 
 #bilder {
@@ -179,16 +188,62 @@ main{
 
 /*KONTAKTDATEN*/
 
-.daten{
-    box-sizing: content-box;
-    color: black;
-    background-color: rgb(200, 200, 200);
-    padding: 3px;
-    margin-left: 100px;
+#kontakt{
+    width: 800px;
+    position: absolute;
+    left: 0;  
 }
 
-.daten p{
-    margin: 30px 0 30px 0;
+#kontakt div:nth-child(1){
+    font-weight: 500;
+    color:#be3c14 ;
+    font-size: 30px;
+}
+
+input{
+    display: block;
+    margin: 10px 0 10px 0;
+    border: none;
+    border-radius: 0;
+    background-color: rgb(177, 177, 177);
+    padding: 10px;
+}
+
+.daten :nth-child(4){
+    width: 200px ;
+    height: 50px;
+}
+
+input::placeholder{
+    color:rgb(255, 255, 255);
+    opacity: 1;
+}
+
+#bestätigung{
+    color: rgb(177, 177, 177);
+}
+
+#bestätigung{
+    font-size: 10px;
+}
+
+.button{
+    
+    color:white;
+    padding: 0 10px 0 10px;
+    display: inline-block;
+    background-color: rgb(177, 177, 177);
+}
+
+.button a{
+    color: white;
+    text-decoration: none;
+}
+
+.button a:hover{
+    animation-duration: 0.4s;
+    color: #be3c14 ;
+   
 }
 
 /*FOOTER*/
