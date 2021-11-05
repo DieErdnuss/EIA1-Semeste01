@@ -1,0 +1,11 @@
+
+body{
+    background-image: url(images/bg.png);
+}
+
+#karte img{
+    display: relative;
+    top: 200px;
+    left: 50%;
+
+} 
