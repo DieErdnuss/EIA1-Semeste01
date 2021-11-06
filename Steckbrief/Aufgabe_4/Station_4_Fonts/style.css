@@ -14,8 +14,14 @@ body{
 }
 
 .wrapper > div:nth-child(2){
+    
+    
+}
+
+.karte{
     background-image: url(images/wrapperbg.png);
-    background-size:cover;
     display: grid;
-    grid-template-columns: 600px;
+    grid-template-columns: 4,1fr;
+    grid-template-rows: 400px;
+
 }
