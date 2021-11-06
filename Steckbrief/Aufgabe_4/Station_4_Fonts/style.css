@@ -1,0 +1,21 @@
+body{
+    background-image: url(images/bg.png);
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 400px;
+    grid-gap: 1em;
+}
+
+.wrapper >div{
+    background-color: turquoise;
+}
+
+.wrapper > div:nth-child(2){
+    background-image: url(images/wrapperbg.png);
+    background-size:cover;
+    display: grid;
+    grid-template-columns: 600px;
+}
