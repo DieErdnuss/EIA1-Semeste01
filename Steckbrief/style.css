@@ -1,9 +1,10 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    overflow: visible;
 }
 
 nav{
-    width: 200px;
+    width: 170px;
 }
 
 nav a{
@@ -24,5 +25,5 @@ nav a:hover{
 #bg{
     background-color: rgb(255, 214, 78);
     display: block;
-    width: 200px;
+    width: 170px;
 }
