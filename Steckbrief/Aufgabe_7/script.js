@@ -32,7 +32,6 @@ window.addEventListener("load", function () {
         playsound(sound5);
     });
     document.querySelector("#button6").addEventListener("click", function () {
-        // Hier findet Funktionsaufruf statt 
         playsound(sound6);
     });
     document.querySelector("#button7").addEventListener("click", function () {
@@ -44,11 +43,9 @@ window.addEventListener("load", function () {
     document.querySelector("#button9").addEventListener("click", function () {
         playsound(sound9);
     });
-});
-var beat = [sound1, sound2, sound3];
-window.addEventListener("load", function () {
+    var beat = [sound1, sound2, sound3];
     document.querySelector(".playbutton").addEventListener("click", function () {
-        playsound(beat);
+        console.log("beat.length");
     });
 });
 //# sourceMappingURL=script.js.map

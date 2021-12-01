@@ -22,38 +22,26 @@ function playsound(sound1: HTMLAudioElement, sound2: HTMLAudioElement, sound3: H
 
 window.addEventListener("load", function(){
     document.querySelector("#button1").addEventListener("click", function(){
-        
         playsound(sound1)})
     document.querySelector("#button2").addEventListener("click", function(){
-         
         playsound(sound2)})
     document.querySelector("#button3").addEventListener("click", function(){
-        
         playsound(sound3)})
     document.querySelector("#button4").addEventListener("click", function(){
-        
         playsound(sound4)})
     document.querySelector("#button5").addEventListener("click", function(){
-        
         playsound(sound5)})
     document.querySelector("#button6").addEventListener("click", function(){
-        // Hier findet Funktionsaufruf statt 
         playsound(sound6)})
     document.querySelector("#button7").addEventListener("click", function(){
-        
         playsound(sound7)})
     document.querySelector("#button8").addEventListener("click", function(){
-        
         playsound(sound8)})
-    document.querySelector("#button9").addEventListener("click", function(){
-           
-         playsound(sound9)})
+    document.querySelector("#button9").addEventListener("click", function(){   
+        playsound(sound9)});
+
+        var beat:HTMLAudioElement[]=[sound1, sound2, sound3];
+
+        document.querySelector(".playbutton").addEventListener("click", function(){
+            console.log("beat.length");
 })
-
- var beat:HTMLAudioElement[]=[sound1, sound2, sound3]
-
- window.addEventListener("load", function(){
-     document.querySelector(".playbutton").addEventListener("click", function(){
-         playsound(beat);
-     })
- })
