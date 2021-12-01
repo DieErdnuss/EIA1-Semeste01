@@ -79,3 +79,19 @@ img:active{
     align-self: center;
     max-width: 460px;
 }
+
+.center{
+    justify-self: center;
+}
+
+#flowchart{
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    justify-self: center;
+}
+
+.hover:hover{
+    color: turquoise;
+}
