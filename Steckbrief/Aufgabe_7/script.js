@@ -21,6 +21,7 @@ window.addEventListener("load", function () {
             ton[0].play();
         }, 100);
     }
+    ;
     document.querySelector(".playbutton").addEventListener("click", playbeat);
 });
 //# sourceMappingURL=script.js.map

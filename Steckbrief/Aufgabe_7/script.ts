@@ -24,8 +24,8 @@ window.addEventListener("load", function(){
         },130)
         setInterval(function(){
             ton[0].play();
-        }, 100)
-    }
+        },100)
+    };
 
     document.querySelector(".playbutton").addEventListener("click", playbeat)
 
