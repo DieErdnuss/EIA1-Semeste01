@@ -6,9 +6,7 @@ body{
 /*GRID*/
 
 .wrapper{
-    
-   justify-self: center;
-
+    justify-self: center;
     display: grid;
     
 }
@@ -71,16 +69,6 @@ body{
     animation-timing-function: cubic-bezier(1s);
 }
 
-img{
-    display: grid;
-    justify-self: center;
-}
-
-img:hover{
-    
-    
-}
-
 img:active{
     opacity: 70%;
 }
@@ -88,5 +76,6 @@ img:active{
 .playbutton{
     display: grid;
     justify-self: center;
+    align-self: center;
     max-width: 460px;
 }
