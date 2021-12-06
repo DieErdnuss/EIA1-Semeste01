@@ -39,6 +39,7 @@ window.addEventListener("load", function(){
         }
     };
 
+    document.querySelector("#button").addEventListener("click", switchButtons);
     document.querySelector("#button").addEventListener("click", beatLoop);
 
 

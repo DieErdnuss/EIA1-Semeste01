@@ -31,6 +31,7 @@ window.addEventListener("load", function () {
         }
     }
     ;
+    document.querySelector("#button").addEventListener("click", switchButtons);
     document.querySelector("#button").addEventListener("click", beatLoop);
     /*
        for (var index:number=0; index <= beatStock.length; index++){
