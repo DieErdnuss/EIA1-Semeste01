@@ -1,0 +1,94 @@
+body{
+    background-color: rgb(39, 39, 39);
+    
+}
+
+/*GRID*/
+
+.wrapper{
+    justify-self: center;
+    display: grid;
+    
+}
+
+/*.wrapper ~ div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+    grid-gap: 1em;
+    background-color: hotpink;
+}*/
+
+.wrapper > div:nth-child(2){
+    /*background-color: indianred;*/
+}
+
+.nested{
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    grid-template-columns:repeat(3, 150px) ;
+    grid-auto-rows: minmax(150px, 150px);
+    grid-gap: 5px;
+} 
+
+.nested > div{
+    border-radius: 10px;
+}
+
+.nested .blue{
+    background-color: rgb(0, 98, 255);
+
+}
+
+.nested .pink{
+    background-color: rgb(255, 77, 106);
+}
+
+.nested .yellow{
+    background-color: rgb(255, 196, 0);
+}
+
+/* BUTTONS INTERACTION*/
+
+.nested >div:hover{
+    width: 99%;
+    height: 99%;
+    align-self: center;
+    justify-self: center;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(1s);
+    
+    
+}
+
+.nested >div:active{
+    opacity: 70%;
+    width: 95%;
+    height: 95%;
+    animation-timing-function: cubic-bezier(1s);
+}
+
+img:active{
+    opacity: 70%;
+}
+
+.playbutton{
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    max-width: 460px;
+}
+
+.center{
+    justify-self: center;
+}
+
+#flowchart{
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    justify-self: center;
+}
+
