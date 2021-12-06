@@ -9,7 +9,7 @@ window.addEventListener("load", function(){
     var beatStock =[soundStock[1], soundStock[3], soundStock[4], soundStock[2], soundStock[7], soundStock[8]];
     
     /*Variablendeklaration*/
-    var key:number=0;
+    var key:number = 0;
     var btn:HTMLElement = document.querySelector("#button");
     
     /*FUNKTION PLAY SOUND*/
@@ -31,6 +31,15 @@ window.addEventListener("load", function(){
 
     /*FUNKTION BEAT LOOP*/
 
+    function beatLoop(){
+        playsound(beatStock[key]);
+        key++;
+        if (key >= beatStock.length){
+            key=0;
+        }
+    };
+
+    document.querySelector("#button").addEventListener("click", beatLoop);
 
 
     /*
@@ -53,8 +62,7 @@ window.addEventListener("load", function(){
   
     /*Playbutton EventListener*/
         
-        document.querySelector("#button").addEventListener("click", switchButtons)
-            
+        
             
             
             

@@ -23,6 +23,15 @@ window.addEventListener("load", function () {
     }
     ;
     /*FUNKTION BEAT LOOP*/
+    function beatLoop() {
+        playsound(beatStock[key]);
+        key++;
+        if (key >= beatStock.length) {
+            key = 0;
+        }
+    }
+    ;
+    document.querySelector("#button").addEventListener("click", beatLoop);
     /*
        for (var index:number=0; index <= beatStock.length; index++){
            playsound(beatStock[index])};
@@ -39,7 +48,6 @@ window.addEventListener("load", function () {
     document.querySelector("#button8").addEventListener("click", function () { playsound(soundStock[7]); });
     document.querySelector("#button9").addEventListener("click", function () { playsound(soundStock[8]); });
     /*Playbutton EventListener*/
-    document.querySelector("#button").addEventListener("click", switchButtons);
 });
 ;
 //# sourceMappingURL=script.js.map
