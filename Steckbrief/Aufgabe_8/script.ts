@@ -4,36 +4,42 @@ window.addEventListener("load", function(){
     /*SoundQuellen*/ 
 
     var soundStock =["assets/hihat.mp3","assets/kick.mp3", "assets/snare.mp3", "assets/F.mp3","assets/G.mp3",
-             "assets/A.mp3", "assets/C.mp3", "assets/laugh-1.mp3", "assets/laugh-2.mp3"];
+                    "assets/A.mp3", "assets/C.mp3", "assets/laugh-1.mp3", "assets/laugh-2.mp3"];
 
     var beatStock =[soundStock[1], soundStock[3], soundStock[4], soundStock[2], soundStock[7], soundStock[8]];
     
     /*Variablendeklaration*/
     var key:number=0;
+    var btn:HTMLElement = document.querySelector("#button");
     
-    
-
-
+    /*FUNKTION PLAY SOUND*/
 
     function playsound(sound:string){
                 var newSoundElement= new Audio(sound);
                 newSoundElement.play();
              };
+  
+    /*FUNKTION BUTTON SWITCH*/
 
-    /*Looped Beat*/
+    function switchButtons(){
+        if (btn.getAttribute("class") == "fas fa-play"){
+            btn.setAttribute("class", "fas fa-stop");
+        }else {
+            btn.setAttribute("class", "fas fa-play");
+        }   
+    };        
 
-    function beatLoop (){
-        do {
-            playsound(beatStock[key])
-            key++;
-           
-            
-        }
-        while(
-            key <= beatStock.length)
-    };
+    /*FUNKTION BEAT LOOP*/
 
-    /*Drumpad Buttons*/
+
+
+    /*
+       for (var index:number=0; index <= beatStock.length; index++){
+           playsound(beatStock[index])};
+       };
+       */
+
+    /*Drumpad EventListener*/
 
         document.querySelector("#button1").addEventListener("click", function(){playsound(soundStock[0])});
         document.querySelector("#button2").addEventListener("click", function(){playsound(soundStock[1])});
@@ -45,9 +51,16 @@ window.addEventListener("load", function(){
         document.querySelector("#button8").addEventListener("click", function(){playsound(soundStock[7])});
         document.querySelector("#button9").addEventListener("click", function(){playsound(soundStock[8])});
   
-    /*Playbutton Funktion und EventListener*/
+    /*Playbutton EventListener*/
         
-        document.querySelector(".playbutton").addEventListener("click", beatLoop);
+        document.querySelector("#button").addEventListener("click", switchButtons)
+            
+            
+            
+            
+        });
+
+
     
    
 

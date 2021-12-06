@@ -58,8 +58,6 @@ body{
     justify-self: center;
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(1s);
-    
-    
 }
 
 .nested >div:active{
@@ -73,11 +71,11 @@ img:active{
     opacity: 70%;
 }
 
-.playbutton{
-    display: grid;
-    justify-self: center;
-    align-self: center;
-    max-width: 460px;
+#button{
+    padding-top: 20px;
+    color: white;
+    height: 100px;
+    font-size: 80px;
 }
 
 .center{
@@ -91,4 +89,6 @@ img:active{
     font-size: 30px;
     justify-self: center;
 }
+
+
 

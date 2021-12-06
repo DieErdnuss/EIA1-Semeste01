@@ -5,20 +5,30 @@ window.addEventListener("load", function () {
     var beatStock = [soundStock[1], soundStock[3], soundStock[4], soundStock[2], soundStock[7], soundStock[8]];
     /*Variablendeklaration*/
     var key = 0;
+    var btn = document.querySelector("#button");
+    /*FUNKTION PLAY SOUND*/
     function playsound(sound) {
         var newSoundElement = new Audio(sound);
         newSoundElement.play();
     }
     ;
-    /*Looped Beat*/
-    function beatLoop() {
-        do {
-            playsound(beatStock[key]);
-            key++;
-        } while (key <= beatStock.length);
+    /*FUNKTION BUTTON SWITCH*/
+    function switchButtons() {
+        if (btn.getAttribute("class") == "fas fa-play") {
+            btn.setAttribute("class", "fas fa-stop");
+        }
+        else {
+            btn.setAttribute("class", "fas fa-play");
+        }
     }
     ;
-    /*Drumpad Buttons*/
+    /*FUNKTION BEAT LOOP*/
+    /*
+       for (var index:number=0; index <= beatStock.length; index++){
+           playsound(beatStock[index])};
+       };
+       */
+    /*Drumpad EventListener*/
     document.querySelector("#button1").addEventListener("click", function () { playsound(soundStock[0]); });
     document.querySelector("#button2").addEventListener("click", function () { playsound(soundStock[1]); });
     document.querySelector("#button3").addEventListener("click", function () { playsound(soundStock[2]); });
@@ -28,30 +38,8 @@ window.addEventListener("load", function () {
     document.querySelector("#button7").addEventListener("click", function () { playsound(soundStock[6]); });
     document.querySelector("#button8").addEventListener("click", function () { playsound(soundStock[7]); });
     document.querySelector("#button9").addEventListener("click", function () { playsound(soundStock[8]); });
-    /*Playbutton Funktion und EventListener*/
-    document.querySelector(".playbutton").addEventListener("click", beatLoop);
-    /*
-    
-    function playbeat(){
-        setInterval(function(){
-            playsound(soundStock[1]);
-        },500);
-        setInterval(function(){
-            playsound(soundStock[3]);
-        },1000)
-        setInterval(function(){
-            playsound(soundStock[4]);
-        },250)
-        setInterval(function(){
-            playsound(soundStock[2]);
-        },1000)
-        setInterval(function(){
-            playsound(soundStock[7]);
-        },2000)
-        setInterval(function(){
-            playsound(soundStock[8]);
-        },4000)
-    
-        */
+    /*Playbutton EventListener*/
+    document.querySelector("#button").addEventListener("click", switchButtons);
 });
+;
 //# sourceMappingURL=script.js.map
