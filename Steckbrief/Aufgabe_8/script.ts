@@ -6,11 +6,12 @@ window.addEventListener("load", function(){
     var soundStock =["assets/hihat.mp3","assets/kick.mp3", "assets/snare.mp3", "assets/F.mp3","assets/G.mp3",
                     "assets/A.mp3", "assets/C.mp3", "assets/laugh-1.mp3", "assets/laugh-2.mp3"];
 
-    var beatStock =[soundStock[1], soundStock[3], soundStock[4], soundStock[2], soundStock[7], soundStock[8]];
+    var beatStock =[soundStock[2], soundStock[2], soundStock[1], soundStock[0]];
     
     /*Variablendeklaration*/
     var key:number = 0;
     var btn:HTMLElement = document.querySelector("#button");
+    var intervalID;
     
     /*FUNKTION PLAY SOUND*/
 
@@ -24,15 +25,24 @@ window.addEventListener("load", function(){
     function switchButtons(){
         if (btn.getAttribute("class") == "fas fa-play"){
             btn.setAttribute("class", "fas fa-stop");
+            intervalID = setInterval(beatLoop, 200);
         }else {
             btn.setAttribute("class", "fas fa-play");
+            clearInterval(intervalID);
+            key=0;
         }   
     };        
+
+    /*INTERVAL*/
+
+    function interval(){
+        
+    };
 
     /*FUNKTION BEAT LOOP*/
 
     function beatLoop(){
-        playsound(beatStock[key]);
+        (playsound(beatStock[key]));
         key++;
         if (key >= beatStock.length){
             key=0;
@@ -40,14 +50,7 @@ window.addEventListener("load", function(){
     };
 
     document.querySelector("#button").addEventListener("click", switchButtons);
-    document.querySelector("#button").addEventListener("click", beatLoop);
-
-
-    /*
-       for (var index:number=0; index <= beatStock.length; index++){
-           playsound(beatStock[index])};
-       };
-       */
+    document.querySelector("#button").addEventListener("click", interval);   
 
     /*Drumpad EventListener*/
 
@@ -59,41 +62,6 @@ window.addEventListener("load", function(){
         document.querySelector("#button6").addEventListener("click", function(){playsound(soundStock[5])});
         document.querySelector("#button7").addEventListener("click", function(){playsound(soundStock[6])});
         document.querySelector("#button8").addEventListener("click", function(){playsound(soundStock[7])});
-        document.querySelector("#button9").addEventListener("click", function(){playsound(soundStock[8])});
-  
-    /*Playbutton EventListener*/
-        
-        
+        document.querySelector("#button9").addEventListener("click", function(){playsound(soundStock[8])});      
             
-            
-            
-        });
-
-
-    
-   
-
-/*
-
-function playbeat(){
-    setInterval(function(){
-        playsound(soundStock[1]);
-    },500);
-    setInterval(function(){
-        playsound(soundStock[3]);
-    },1000)
-    setInterval(function(){
-        playsound(soundStock[4]);
-    },250)
-    setInterval(function(){
-        playsound(soundStock[2]);
-    },1000)
-    setInterval(function(){
-        playsound(soundStock[7]);
-    },2000)
-    setInterval(function(){
-        playsound(soundStock[8]);
-    },4000)
-
-    */
 });
