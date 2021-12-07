@@ -41,16 +41,25 @@ window.addEventListener("load", function(){
 
     /*FUNKTION BEAT LOOP*/
 
-    function beatLoop(){
-        (playsound(beatStock[key]));
-        key++;
-        if (key >= beatStock.length){
-            key=0;
-        }
+    function mix(){
+        key = Math.round(Math.random()*3);
+            setInterval(random, 200)
+        function random(){
+            playsound(beatStock[key]);
+        }         
     };
 
+    function beatLoop(){
+            playsound(beatStock[key]);
+            key++;
+            if (key >= beatStock.length){
+                key=0;
+            }
+        };
     document.querySelector("#button").addEventListener("click", switchButtons);
-    document.querySelector("#button").addEventListener("click", interval);   
+    document.querySelector("#button").addEventListener("click", interval);  
+    document.querySelector("#mixer").addEventListener("click", mix);   
+
 
     /*Drumpad EventListener*/
 

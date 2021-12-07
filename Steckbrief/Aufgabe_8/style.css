@@ -90,5 +90,15 @@ img:active{
     justify-self: center;
 }
 
+#mixer{
+    padding: 20px;
+    font-size: 80px;
+    color: rgb(0, 132, 255);
+}
+
+#mixer.active{
+    
+}
+
 
 

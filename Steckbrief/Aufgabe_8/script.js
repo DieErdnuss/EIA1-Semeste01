@@ -31,8 +31,16 @@ window.addEventListener("load", function () {
     }
     ;
     /*FUNKTION BEAT LOOP*/
+    function mix() {
+        key = Math.round(Math.random() * 3);
+        setInterval(random, 200);
+        function random() {
+            playsound(beatStock[key]);
+        }
+    }
+    ;
     function beatLoop() {
-        (playsound(beatStock[key]));
+        playsound(beatStock[key]);
         key++;
         if (key >= beatStock.length) {
             key = 0;
@@ -41,6 +49,7 @@ window.addEventListener("load", function () {
     ;
     document.querySelector("#button").addEventListener("click", switchButtons);
     document.querySelector("#button").addEventListener("click", interval);
+    document.querySelector("#mixer").addEventListener("click", mix);
     /*Drumpad EventListener*/
     document.querySelector("#button1").addEventListener("click", function () { playsound(soundStock[0]); });
     document.querySelector("#button2").addEventListener("click", function () { playsound(soundStock[1]); });
