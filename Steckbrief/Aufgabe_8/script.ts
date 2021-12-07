@@ -7,6 +7,8 @@ window.addEventListener("load", function(){
                     "assets/A.mp3", "assets/C.mp3", "assets/laugh-1.mp3", "assets/laugh-2.mp3"];
 
     var beatStock =[soundStock[2], soundStock[2], soundStock[1], soundStock[0]];
+
+    var recordStock = []
     
     /*Variablendeklaration*/
     var key:number = 0;
@@ -32,6 +34,13 @@ window.addEventListener("load", function(){
             key=0;
         }   
     };        
+
+    /*RECORD
+
+    function record(){
+        var total = recordStock.push(playsound)
+    };
+    */
 
     /*INTERVAL*/
 

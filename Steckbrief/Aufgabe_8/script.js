@@ -3,6 +3,7 @@ window.addEventListener("load", function () {
     var soundStock = ["assets/hihat.mp3", "assets/kick.mp3", "assets/snare.mp3", "assets/F.mp3", "assets/G.mp3",
         "assets/A.mp3", "assets/C.mp3", "assets/laugh-1.mp3", "assets/laugh-2.mp3"];
     var beatStock = [soundStock[2], soundStock[2], soundStock[1], soundStock[0]];
+    var recordStock = [];
     /*Variablendeklaration*/
     var key = 0;
     var btn = document.querySelector("#button");
@@ -26,6 +27,12 @@ window.addEventListener("load", function () {
         }
     }
     ;
+    /*RECORD
+
+    function record(){
+        var total = recordStock.push(playsound)
+    };
+    */
     /*INTERVAL*/
     function interval() {
     }
