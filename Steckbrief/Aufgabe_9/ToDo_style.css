@@ -7,10 +7,6 @@ body{
     margin: 0;
 }
 
-#header p{
-    font-family: 'Bungee Shade', cursive;
-}
-
 /*============= WRAPPER GRID ===========*/
 
 #wrapper{
@@ -18,7 +14,7 @@ body{
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 600px 1fr;
-    grid-template-rows: 400px 100px 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
         "header header header"
         ". newTask ."
@@ -30,15 +26,36 @@ body{
 
 #header{
     grid-area: header;    
-    display: grid;
-    
+    display: grid;    
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 200px 100px;
+    grid-template-areas: 
+        "headertext headertext headertext"
+        "counter counter counter";
+
     background-color: rgb(172, 172, 172);
 }
 
-#header > p{
+#headertext{
+    grid-area: headertext;
     font-size: 100px;
+    justify-self: center;
+    align-self: center;
+    font-family: 'Bungee Shade', cursive;   
+}
+
+#taskCounter{
+    grid-area: counter;
+    font-size: 40px;
     place-self: center;
+    font-family: 'Bungee Shade', cursive;
     
+}
+
+#header >p:nth-child(2){
+    grid-area: counter;
+    font-family: 'Varela Round', sans-serif;
+    place-self: center;
 }
 
 /*================ TASK´S ==========*/
@@ -55,6 +72,7 @@ body{
     font-size: large;
     outline: none;
     place-self: center;
+    font-family: 'Varela Round', sans-serif;
 
 }
 

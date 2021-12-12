@@ -2,11 +2,18 @@ window.addEventListener("load", function () {
     const todolist = document.getElementById("todolist");
     const AddBtn = document.getElementById("addbtn");
     const TaskInput = document.getElementById("TaskInput");
+    const TaskCounter = document.getElementById("taskCounter");
+    var key = 0;
+    //let TaskIn = document.querySelector('TaskInput[type="text"]') as HTMLInputElement;
+    /* ADD TASK - BUTTON */
     AddBtn.addEventListener("click", function () {
         addTasktoArrey();
         addTaskList();
     });
-    /* KEY PRESSED FUNC*/
+    //function CountTask(){
+    TaskCounter.innerHTML = key + "";
+    //}
+    /* KEY PRESSED */
     document.getElementById("TaskInput").addEventListener("keydown", keypressed);
     function keypressed(key) {
         if (key.keyCode === 13) {
@@ -45,7 +52,7 @@ window.addEventListener("load", function () {
         //ADD DELETE BUTTON
         const BtnDel = document.createElement("button");
         BtnDel.innerText = "Löschen";
-        BtnDel.classList.add("BtnDel", "fas fa-trash");
+        BtnDel.classList.add("BtnDel", "fas", "fa-trash");
         buildDiv.appendChild(BtnDel);
         //ADD CHECK BUTTON
         const BtnCheck = document.createElement("button");
@@ -53,19 +60,28 @@ window.addEventListener("load", function () {
         buildDiv.appendChild(BtnCheck);
         //ADD DIV to TODOLIST
         todolist.appendChild(buildDiv);
+        TaskInput.value = "";
+        key++;
         console.log(tasks);
     }
     ;
     const BtnCheck = document.getElementsByClassName("BtnCheck");
-    BtnCheck.addEventListener("click", check);
+    for (let i = 0; i < BtnCheck.length; i++) {
+        BtnCheck[i].addEventListener("click", check);
+    }
+    ;
     function check() {
-        if (BtnCheck.getAttribute("class") == "check") {
-            BtnCheck.setAttribute("class", "");
+        if (this.classList.contains("check")) {
+            this.classList.remove("check");
+            console.log("Klasse");
         }
         else {
-            BtnCheck.setAttribute("class", "check");
+            this.classList.add("check");
+            console.log("keine Klasse");
         }
+        ;
     }
     ;
 });
+;
 //# sourceMappingURL=ToDo_script.js.map

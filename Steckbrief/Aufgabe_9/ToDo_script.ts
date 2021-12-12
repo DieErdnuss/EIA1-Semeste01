@@ -3,20 +3,26 @@ window.addEventListener("load", function(){
    
 const todolist:HTMLElement = document.getElementById("todolist");
 const AddBtn:HTMLElement = document.getElementById("addbtn");
-const TaskInput:HTMLElement = document.getElementById("TaskInput");
+const TaskInput:HTMLInputElement = document.getElementById("TaskInput");
+const TaskCounter:HTMLElement = document.getElementById("taskCounter");
+var key:number = 0;
 
+//let TaskIn = document.querySelector('TaskInput[type="text"]') as HTMLInputElement;
 
-
+/* ADD TASK - BUTTON */
 
 AddBtn.addEventListener("click", function(){
     addTasktoArrey();
     addTaskList();
 });
 
-/* KEY PRESSED FUNC*/
+//function CountTask(){
+    TaskCounter.innerHTML = key + "";
+//}
+
+/* KEY PRESSED */
 
 document.getElementById("TaskInput").addEventListener("keydown", keypressed);
-
 
     function keypressed(key){
        if (key.keyCode === 13){
@@ -47,44 +53,62 @@ document.getElementById("TaskInput").addEventListener("keydown", keypressed);
 
 /*========== LIST ADDER ============*/
 
+
+
     function addTaskList(){
     //TASKS DIV
         const buildDiv = document.createElement("div");
         buildDiv.classList.add("tasks");
-    //LIST ELEMENT
-        const buildList:HTMLElement = document.createElement("li");
-        buildList.innerHTML = TaskInput.value;
-        buildList.classList.add("list-item");
-        buildDiv.appendChild(buildList);
-    //ADD DELETE BUTTON
-        const BtnDel = document.createElement("button");
-        BtnDel.innerText = "Löschen";
-        BtnDel.classList.add("BtnDel", "fas fa-trash");
-        buildDiv.appendChild(BtnDel);
-    //ADD CHECK BUTTON
-        const BtnCheck = document.createElement("button");
-        
-        BtnCheck.classList.add("BtnCheck");
-        
-        buildDiv.appendChild(BtnCheck);
-
+        //LIST ELEMENT
+            const buildList:HTMLElement = document.createElement("li");
+            buildList.innerHTML = TaskInput.value;
+            buildList.classList.add("list-item");
+            buildDiv.appendChild(buildList);
+        //ADD DELETE BUTTON
+            const BtnDel = document.createElement("button");
+            BtnDel.innerText = "Löschen";
+            BtnDel.classList.add("BtnDel", "fas", "fa-trash");
+            buildDiv.appendChild(BtnDel);
+        //ADD CHECK BUTTON
+            const BtnCheck = document.createElement("button");
+            BtnCheck.classList.add("BtnCheck");
+            buildDiv.appendChild(BtnCheck);
     //ADD DIV to TODOLIST
         todolist.appendChild(buildDiv);
+
+        TaskInput.value="";
+
+        key++;
 
         console.log(tasks);
     };
 
-    
-    const BtnCheck:HTMLElement = document.getElementsByClassName("BtnCheck");
-    BtnCheck.addEventListener("click", check);
+    const BtnCheck = document.getElementsByClassName("BtnCheck");
 
-    function check(){
-        if (BtnCheck.getAttribute ("class") == "check"){
-            BtnCheck.setAttribute ("class", "")
-        } else {
-            BtnCheck.setAttribute ("class", "check")
-        }
+    for ( let i=0 ; i < BtnCheck.length; i++){
+        BtnCheck[i].addEventListener("click", check)
     };
+    
+    function check(){
+            if (this.classList.contains("check")){
+                this.classList.remove("check")
+                console.log("Klasse");
+                            
+            } else {
+                this.classList.add("check")
+                console.log("keine Klasse");
+                
+            };
+    };
+        
+    
+
+    });
+
+
+    
+    
+   
 
     
     
