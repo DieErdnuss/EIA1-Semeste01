@@ -6,35 +6,18 @@ window.addEventListener("load", function(){
     const TaskCounter:HTMLElement = document.getElementById("taskCounter");
     var key:number = 0;
 
-    let TaskInput = document.querySelector('#TaskInput[type="text"]') as HTMLInputElement;
-
-    /* ADD TASK - BUTTON */
-
-    AddBtn.addEventListener("click", function(){
-    console.log("Add Button clicked");
-    
-    addTaskList();
-    });
-
-    function CountTask(){
-        TaskCounter.innerHTML = key + "";
-        }
-
-    
-
-    
+    let TaskInput = document.querySelector('#TaskInput[type="text"]') as HTMLInputElement;  
+   
 
     /* KEY PRESSED */
 
     document.getElementById("TaskInput").addEventListener("keydown", keypressed);
 
     function keypressed(key) {
-        if (key.keyCode === 13){
+        if (key.keyCode === 13 && TaskInput.value != ""){
             addTaskList();
-            console.log("Enter Pressed");
-                 
-            //neues HTML element muss entstehenn//
-            } else {
+            console.log("Enter Pressed");           
+        } else {
                 console.log("wert wird eingegeben");
             }
         }
@@ -43,7 +26,7 @@ window.addEventListener("load", function(){
 
     function addTaskList(){
     //TASKS DIV
-        const buildDiv:HTMLElement = document.createElement("div");
+        var buildDiv:HTMLElement = document.createElement("div");
         buildDiv.classList.add("tasks");
         console.log("Build Div");
         
@@ -76,16 +59,26 @@ window.addEventListener("load", function(){
         CountTask();
         console.log(TaskInput.value);
 
+         // DELETE TASK
+
         BtnDel.addEventListener("click", deleteTask);
         function deleteTask(){
             console.log("delete task");
             buildDiv.remove();
-                
+            key--;
+            console.log("Delete Count Number");            
         };
-
+        
         BtnCheck.addEventListener("click", check);
         
     };
+
+    // TASK COUNTER
+
+    function CountTask(){
+        TaskCounter.innerHTML = key + "";
+        }
+
 
 
     // CLASS CHANGE
@@ -101,7 +94,7 @@ window.addEventListener("load", function(){
             };
         };
 
-    // DELETE TASK
+   
 
     
 });

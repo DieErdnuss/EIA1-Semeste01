@@ -4,21 +4,12 @@ window.addEventListener("load", function () {
     const TaskCounter = document.getElementById("taskCounter");
     var key = 0;
     let TaskInput = document.querySelector('#TaskInput[type="text"]');
-    /* ADD TASK - BUTTON */
-    AddBtn.addEventListener("click", function () {
-        console.log("Add Button clicked");
-        addTaskList();
-    });
-    function CountTask() {
-        TaskCounter.innerHTML = key + "";
-    }
     /* KEY PRESSED */
     document.getElementById("TaskInput").addEventListener("keydown", keypressed);
     function keypressed(key) {
-        if (key.keyCode === 13) {
+        if (key.keyCode === 13 && TaskInput.value != "") {
             addTaskList();
             console.log("Enter Pressed");
-            //neues HTML element muss entstehenn//
         }
         else {
             console.log("wert wird eingegeben");
@@ -27,7 +18,7 @@ window.addEventListener("load", function () {
     /*========== LIST ADDER ============*/
     function addTaskList() {
         //TASKS DIV
-        const buildDiv = document.createElement("div");
+        var buildDiv = document.createElement("div");
         buildDiv.classList.add("tasks");
         console.log("Build Div");
         //LIST ELEMENT
@@ -53,15 +44,22 @@ window.addEventListener("load", function () {
         key++;
         CountTask();
         console.log(TaskInput.value);
+        // DELETE TASK
         BtnDel.addEventListener("click", deleteTask);
         function deleteTask() {
             console.log("delete task");
             buildDiv.remove();
+            key--;
+            console.log("Delete Count Number");
         }
         ;
         BtnCheck.addEventListener("click", check);
     }
     ;
+    // TASK COUNTER
+    function CountTask() {
+        TaskCounter.innerHTML = key + "";
+    }
     // CLASS CHANGE
     function check() {
         if (this.classList.contains("check")) {
@@ -75,6 +73,5 @@ window.addEventListener("load", function () {
         ;
     }
     ;
-    // DELETE TASK
 });
 //# sourceMappingURL=ToDo_script.js.map
