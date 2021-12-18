@@ -5,22 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ToDo_style.css">
-    <link rel="stylesheet" href="https://fontawesome.com/v5.15/icons/trash?style=solid">  
+    <link rel="stylesheet" href="https://fontawesome.com/v5.15/icons/trash?style=solid">
+    <script src="libs/artyom.window.min.js"></script>
     <script src="ToDo_script.js"></script>
     <title>ToDo App</title>
 </head>
 <body>
-   
+    <a id="flowchart" href="images/2021-12-15_FLOWCHART_ToDoList.pdf" target="_blank">FLOWCHART</a>
     <div id="wrapper">
         <div id="header">
             <p id="headertext">ToDo's</p>
-            <p >INSGESAMT <span id="taskCounter"></span></span> AUFGABEN HINZUGEFÜGT.</p>
+            <div id="countertext">Anzahl der Aufgaben</div>
+            
+                <div id="taskCounter">
+                    
+                    <div id="total">
+                        <div id="totalimg">∑</div>
+                        <div id="totalnum">0</div>
+                    </div>
+
+                    <div id="checked">
+                        <div id="checkedimg"></div>
+                        <div id="checkednum">0</div>
+                    </div>
+
+                    <div id="deleted">
+                        <div id="deletedimg" class="fas fa-trash-alt"></div>
+                        <div id="deletednum">0</div>
+                    </div>
+                    
+                </div>
         </div>
+
+s
+
         <input  id="TaskInput" type="text" placeholder="Feed me!" >
             <div id="todolist">
             
             </div>      
-    </div>
+            
+        </div>
+
+        
+        
 
    
     

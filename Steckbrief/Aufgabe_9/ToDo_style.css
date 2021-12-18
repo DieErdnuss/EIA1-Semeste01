@@ -5,6 +5,7 @@
 body{
     font-family: 'Varela Round', sans-serif;
     margin: 0;
+    background-color: rgb(59, 59, 59);
 }
 
 /*============= WRAPPER GRID ===========*/
@@ -14,7 +15,7 @@ body{
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 600px 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas:
         "header header header"
         ". newTask ."
@@ -28,12 +29,15 @@ body{
     grid-area: header;    
     display: grid;    
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 200px 100px;
+    grid-template-rows: 200px 50px 100px;
     grid-template-areas: 
         "headertext headertext headertext"
+        " . countertext . "
         "counter counter counter";
 
-    background-color: rgb(172, 172, 172);
+        background-color: rgb(41, 41, 41);
+
+    
 }
 
 #headertext{
@@ -42,15 +46,127 @@ body{
     justify-self: center;
     align-self: center;
     font-family: 'Bungee Shade', cursive;   
+    color: white;
+}
+
+/*=========== COUNTER ============*/
+
+#countertext{
+    grid-area: countertext;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+
 }
 
 #taskCounter{
     grid-area: counter;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 50px;
+    grid-template-areas: 
+        " . total checked deleted . ";
+    
     font-size: 40px;
     place-self: center;
-    font-family: 'Bungee Shade', cursive;
+    /*font-family: 'Bungee Shade', cursive;*/
+    column-gap: 2em;
     
 }
+
+
+
+/*TOTAL*/
+
+#total{
+    grid-area: total;
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        " totalimg totalnum ";
+
+        background-color: rgb(197, 197, 197);
+        font-size: 20px;
+        text-align: center;
+        border-radius: 2px;
+        
+}
+
+#totalimg{
+    grid-area: totalimg;
+    font-size: 35px;
+    
+}
+
+#totalnum{
+    grid-area: totalnum;
+    place-self: center;
+    font-size: 30px;
+
+}
+
+
+
+/*CHECKED*/
+
+#checked{
+    grid-area: checked;
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        " checkedimg checkednum ";
+
+        background-color: rgb(197, 197, 197);
+        border-radius: 2px;
+    
+}
+
+#checkedimg{
+    grid-area: checkedimg;
+    background-image: url(images/checkHaken.png);
+        background-position: center;
+        background-size: 40px;
+        background-repeat: no-repeat; 
+}
+
+#checkednum{
+    grid-area: checkednum;
+    place-self: center;
+    font-size: 30px;
+}
+
+/*DONE*/
+
+#deleted{
+    grid-area: deleted;
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: 1fr;
+    background-color: rgb(197, 197, 197);
+    grid-template-areas: 
+        " deletedimg deletednum ";
+
+        border-radius: 2px;
+}
+
+.fa-trash-alt{
+    font-size: 20px;
+
+}
+#deletedimg{
+    grid-area: deletedimg;
+    
+}
+
+#deletednum{
+    grid-area: deletednum;
+    place-self: center;
+    font-size: 30px;
+}
+
+
 
 #header >p:nth-child(2){
     grid-area: counter;
@@ -66,8 +182,8 @@ body{
     grid-area: newTask;
     width: 100%;
     height: 40px;
-    border-radius: 0;
-    border: solid black 2px;
+    border-radius: 2px;
+    border: none;
     padding-left: 20px;
     font-size: large;
     outline: none;
@@ -92,7 +208,7 @@ body{
 
 .tasks{
     margin: 10px 0 0 0 ;
-    background-color: rgb(37, 37, 37);
+    background-color: rgb(41, 41, 41);
     
     display: grid;
     grid-template-columns: 70px 1fr 1fr 1fr;
@@ -162,4 +278,11 @@ body{
 .check:active{
     background-color: rgb(172, 172, 172);
     border-color: rgb(63, 63, 63);
+}
+
+#flowchart{
+    border-radius: 0;
+    text-decoration: none;
+    color: black;
+    
 }
