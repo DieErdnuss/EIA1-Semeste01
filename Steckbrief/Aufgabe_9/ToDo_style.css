@@ -15,10 +15,11 @@ body{
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 600px 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr  1fr 1fr;
     grid-template-areas:
         "header header header"
         ". newTask ."
+        " . instruction . "
         ". todolist ."
         ;
 }
@@ -192,6 +193,20 @@ body{
 
 }
 
+#instruction{
+    grid-area: instruction;
+    
+    place-self: center;
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+    display: inline;
+    text-align: center;
+    background-color: rgb(41, 41, 41);
+   
+}
+
+
 #addbtn{
     height: 50px;
     width: 100px;
@@ -199,8 +214,8 @@ body{
 
 /* ToDo LIST */
 
+
 #todolist{
-    justify-self:;
     grid-area: todolist;
     height: 700px;
 }
@@ -212,7 +227,7 @@ body{
     
     display: grid;
     grid-template-columns: 70px 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr ;
     grid-template-areas: 
         "check listtext listtext del   "    
     ;
@@ -221,13 +236,16 @@ body{
 
 .list-item{
     grid-area: listtext;
-    justify-self: start;
-    align-self: center;
+    place-self: center;
+    
+    
     color: white;
     font-size: 20px;
     text-align: left;
     text-justify:initial;
     list-style: none;
+    border-radius: 2px;
+    
 }
 
 .BtnDel{
@@ -242,6 +260,8 @@ body{
     background-color: rgb(255, 38, 38);
     color: white;
     font-size: 15px;
+    border-top-right-radius: 3px;
+    border-end-end-radius: 3px;
 }
 
 .BtnCheck{
@@ -254,6 +274,8 @@ body{
     background-size: 25px;
     background-repeat: no-repeat;
     background-position: center;
+    border-top-left-radius: 3px;
+    border-end-start-radius: 3px;
 
 }
 
